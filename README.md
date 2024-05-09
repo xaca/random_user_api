@@ -2,7 +2,7 @@
 
 En este ejercicio, se podrá probar como consultar un API o endpoint, para esto utilizaremos una API publica y gratuita, que se encuentra en el siguiente enlace
 
-- (Random User API)[https://randomuser.me]
+- [Random User API](https://randomuser.me)
 
 Para cambiar el total de los datos que devuelve la petición, se debe modificar la url, cambiando el paramatro results
 
