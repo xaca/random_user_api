@@ -5,11 +5,12 @@ import RenderUI from './xaca/RenderUI.js';
 window.onload = function(){
     let peticion = new Peticion();
     let render = new RenderUI({
-        gallery: document.getElementById('gallery')
+        gallery: document.querySelector('.gallery')
     });
     peticion.configurar({
         button: document.getElementById('btn_enviar'),
-        render: render.renderData.bind(render)
+        render: render.renderData,
+        contexto: render
     });
     //peticion.consultar();
 }
