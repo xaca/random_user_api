@@ -5,16 +5,9 @@ class RenderUI{
     renderData(obj){
         let user = obj.results[0];
         let contexto = this.contexto;
+                
+        this.renderCards(obj.results);
         
-        if(this.contexto)
-        {
-            console.log("Renderizando datos desde la clase Peticion");
-            this.contexto.renderCards(obj.results);
-        }
-        else{
-            console.log("Renderizando datos desde la clase RenderUI");
-            this.renderCards(obj.results);
-        }
     }
     renderCards(obj){
         let cards = "";
