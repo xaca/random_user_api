@@ -67,8 +67,8 @@ class Paginator{
         /*this.renderCards.call(this,{
             data: data
         });*/
-        this.render.renderData(data);
-
+        //this.render.renderData(data);
+        //El paginator ya no tiene responsabilidad de renderizar
         this.updatePageLinks.call(this,obj);  
     }
     updatePageLinks(obj){

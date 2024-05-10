@@ -1,11 +1,13 @@
 class RenderUI{
     constructor(obj){
         this.gallery = obj.gallery;
+        this.paginator = obj.paginator;
     }
     renderData(obj){
-        let user = obj.results[0];
-        let contexto = this.contexto;
-                
+               
+        this.paginator.data = obj.results;
+        this.render = this;
+        this.paginator.createPagination();
         this.renderCards(obj.results);
         
     }
