@@ -5,7 +5,6 @@ class Peticion{
         //this.configurar(obj);
     }
     configurar(obj){
-        //console.log(obj.button);return;
         this.boton = obj.button;
         this.boton.addEventListener('click', this.consultar.bind(this,{
             obj:obj,
