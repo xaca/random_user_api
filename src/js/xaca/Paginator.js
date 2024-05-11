@@ -1,4 +1,5 @@
 class Paginator{
+    static RENDER_UPDATE = 'render';
     constructor(obj){
         this.currentPage = obj.currentPage?obj.currentPage:1;
         this.itemsPerPage = obj.itemsPerPage?obj.itemsPerPage:6;
@@ -7,7 +8,7 @@ class Paginator{
         this.btn_next = undefined;
         this.contenedor = obj.contenedor;
         this.data = obj.data?obj.data:[];
-        this.render = obj.render;
+        this.isready = false;
     }
     createPagination(){
         let pages = Math.ceil(this.data.length / this.itemsPerPage);
@@ -24,7 +25,8 @@ class Paginator{
             </li>`;
         }
         buttons += `<li><a href="javascript:void(0);" id="btn_next">&raquo;</a></li>`;
-    
+        
+        this.isready = true;
         this.contenedor.innerHTML = buttons;
         this.pages_items = document.querySelectorAll(".pag_item");
         this.btn_before = document.getElementById("btn_before");
@@ -57,18 +59,15 @@ class Paginator{
         this.renderPage.call(this,this.pages_items[before-1]);
     }
     renderPage(obj){
-        
         let num = obj?parseInt(obj.getAttribute("page")):1;
         let start = (num-1)*this.itemsPerPage;
         let end = start+this.itemsPerPage;
         let data = this.data.slice(start, end);
         this.currentPage = num;
-        
-        /*this.renderCards.call(this,{
-            data: data
-        });*/
-        //this.render.renderData(data);
-        //El paginator ya no tiene responsabilidad de renderizar
+        /*El paginator ya no tiene responsabilidad de renderizar,
+        pero envia el evento render */
+        const event = new CustomEvent(Paginator.RENDER_UPDATE, { detail: data });
+        document.dispatchEvent(event);
         this.updatePageLinks.call(this,obj);  
     }
     updatePageLinks(obj){

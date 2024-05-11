@@ -5,7 +5,7 @@ import RenderUI from './xaca/RenderUI.js';
 window.onload = function(){
     let peticion = new Peticion();
     let paginator = new Paginator({
-        contenedor: document.querySelector('.paginator')
+        contenedor: document.querySelector('.pagination')
     });
     let render = new RenderUI({
         gallery: document.querySelector('.gallery'),

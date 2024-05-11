@@ -8,4 +8,4 @@ class User{
     }
 }
 
-export default Modelo;
+export default User;

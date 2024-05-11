@@ -1,22 +1,26 @@
+import Paginator from "./Paginator";
+
 class RenderUI{
     constructor(obj){
         this.gallery = obj.gallery;
         this.paginator = obj.paginator;
+        document.addEventListener(Paginator.RENDER_UPDATE,this.renderUpdate.bind(this));
+    }
+    renderUpdate(event){
+        this.renderCards(event.detail);
     }
     renderData(obj){
-               
-        this.paginator.data = obj.results;
-        this.render = this;
-        this.paginator.createPagination();
+        if(!this.paginator.isready)
+        {
+            this.paginator.data = obj.results;
+            this.paginator.createPagination();
+        }
         this.renderCards(obj.results);
-        
     }
     renderCards(obj){
         let cards = "";
         let data = obj;
         
-        //console.dir(obj);return;
-
         for(let i = 0; i < data.length; i++){
             cards += this.renderCard(data[i]);
         }
