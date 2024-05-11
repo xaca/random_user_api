@@ -16,3 +16,10 @@ Para cambiar el total de los datos que devuelve la petición, se debe modificar 
 4. Esperar que se descarguen las dependencias
 5. Ejecutar el proyecto de manera local o para producción, con los comandos: npm run start o npm run build
 6. Abra el navegador en la url http://localhost:1234/
+
+## Pendiente
+
+- Estilos responsive
+- Controlar desbordamiento de las fotos cuando el nombre es largo
+- Hacer más pequeños los enlaces de las páginas
+

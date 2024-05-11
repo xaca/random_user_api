@@ -7,8 +7,10 @@ class Paginator{
         this.btn_before = undefined;
         this.btn_next = undefined;
         this.contenedor = obj.contenedor;
-        this.data = obj.data?obj.data:[];
-        this.isready = false;
+    }
+    asignarModelo(modelo){
+        this.data = modelo.datos;
+        this.createPagination.call(this);
     }
     createPagination(){
         let pages = Math.ceil(this.data.length / this.itemsPerPage);
@@ -26,7 +28,6 @@ class Paginator{
         }
         buttons += `<li><a href="javascript:void(0);" id="btn_next">&raquo;</a></li>`;
         
-        this.isready = true;
         this.contenedor.innerHTML = buttons;
         this.pages_items = document.querySelectorAll(".pag_item");
         this.btn_before = document.getElementById("btn_before");

@@ -1,3 +1,5 @@
+import User from "./User.js";
+
 class Modelo{
     constructor(){
         this.datos = [];
@@ -19,3 +21,5 @@ class Modelo{
         }
     }
 }
+
+export default Modelo;

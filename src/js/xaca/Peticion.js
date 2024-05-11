@@ -1,7 +1,8 @@
 class Peticion{
+    static REQUEST_COMPLETE = "request_complete";
     constructor(obj){
         //this.url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
-        this.url = "https://randomuser.me/api/?results=10";
+        this.url = "https://randomuser.me/api/?results=20";
         //this.configurar(obj);
     }
     configurar(obj){
@@ -15,9 +16,11 @@ class Peticion{
         .then(response=>response.json())//Respuesta en formato json
         .then(((ref,data)=>{
             //ref.render(data);
-            this.data = data;
-            this.pintarDatos(ref,data);
+            //this.data = data;
+            //this.pintarDatos(ref,data);
             //this.debug(data);
+            const event = new CustomEvent(Peticion.REQUEST_COMPLETE, { detail: data });
+            document.dispatchEvent(event);
         }).bind(this,ref));   
     }
     pintarDatos(ref,data){

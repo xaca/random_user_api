@@ -9,18 +9,10 @@ class RenderUI{
     renderUpdate(event){
         this.renderCards(event.detail);
     }
-    renderData(obj){
-        if(!this.paginator.isready)
-        {
-            this.paginator.data = obj.results;
-            this.paginator.createPagination();
-        }
-        this.renderCards(obj.results);
-    }
     renderCards(obj){
         let cards = "";
         let data = obj;
-        
+        console.log(data.length);
         for(let i = 0; i < data.length; i++){
             cards += this.renderCard(data[i]);
         }
@@ -32,7 +24,7 @@ class RenderUI{
         let card = `
         <section class="card">
             <div>
-                <h3>${user.name.first} ${user.name.last}</h3>
+                <h3>${user.name} ${user.lastname}</h3>
                 <span>${user.email}</span>
                 <a href="#" class="btn">Ver más</a>
             </div>
