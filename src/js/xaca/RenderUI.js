@@ -12,7 +12,6 @@ class RenderUI{
     renderCards(obj){
         let cards = "";
         let data = obj;
-        console.log(data.length);
         for(let i = 0; i < data.length; i++){
             cards += this.renderCard(data[i]);
         }
