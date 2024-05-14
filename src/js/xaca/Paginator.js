@@ -2,7 +2,7 @@ class Paginator{
     static RENDER_UPDATE = 'render';
     constructor(obj){
         this.currentPage = obj.currentPage?obj.currentPage:1;
-        this.itemsPerPage = obj.itemsPerPage?obj.itemsPerPage:6;
+        this.itemsPerPage = obj.itemsPerPage?obj.itemsPerPage:20;
         this.pages_items = undefined;
         this.btn_before = undefined;
         this.btn_next = undefined;

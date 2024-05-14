@@ -2,7 +2,7 @@ class Peticion{
     static REQUEST_COMPLETE = "request_complete";
     constructor(obj){
         //this.url = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
-        this.url = "https://randomuser.me/api/?results=20";
+        this.url = "https://randomuser.me/api/?results=200";
         //this.configurar(obj);
     }
     configurar(obj){

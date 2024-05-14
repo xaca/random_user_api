@@ -21,5 +21,6 @@ Para cambiar el total de los datos que devuelve la petición, se debe modificar 
 
 - Estilos responsive
 - Controlar desbordamiento de las fotos cuando el nombre es largo
-- Hacer más pequeños los enlaces de las páginas
-
+- Enviar la url de la petición
+- Hacer más pequeños los enlaces de las páginas en el paginador
+- Configurar el paginador con valores que se le pasan al constructor, para personalizar la cantidad de items por pagina
