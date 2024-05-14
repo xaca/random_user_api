@@ -2,9 +2,10 @@ import Peticion from './xaca/Peticion.js';
 import Paginator from './xaca/Paginator.js';
 import RenderUI from './xaca/RenderUI.js';
 import Modelo from './xaca/Modelo.js';
+import Nube from './nube/Nube.js';
 
-window.onload = function(){
-    let peticion = new Peticion();
+window.onload = async function(){
+    /*let peticion = new Peticion();
     let modelo = new Modelo();
     let paginator = new Paginator({
         contenedor: document.querySelector('.pagination')
@@ -19,6 +20,10 @@ window.onload = function(){
     document.addEventListener(Peticion.REQUEST_COMPLETE,(event)=>{
         modelo.formatearData(event.detail);
         paginator.asignarModelo(modelo);
-    });
-    //peticion.consultar();
+    });*/
+    let nube = new Nube();
+    const response = await nube.login('a@a.com','123456');
+    const response2 = await nube.nuevoUsuario();
+    console.log(response);
+    console.log(response2);
 }
