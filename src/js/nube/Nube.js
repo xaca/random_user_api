@@ -5,6 +5,9 @@ import { getFirestore,  collection, addDoc  } from "firebase/firestore";
 
 class Nube{
     constructor(){
+        /*
+            Esta información llega de: Configuración de proyecto / app web js / npm
+        */
         this.config = {
             apiKey: "AIzaSyBPIqo2cTmP59rIbD9Z4-YNe1a-bmCA1t8",
             authDomain: "xacaloginregistro.firebaseapp.com",
@@ -30,13 +33,12 @@ class Nube{
         }
     }
 
-    // Add a new document in collection "cities"
     async nuevoUsuario(){
         return await addDoc(collection(this.db, "users"), {
             uid: this.user.uid,
-            nombre: "Andres",
-            email: "a@z.com",
-            celular: "3003187459"
+            nombre: "Mario",
+            email: "mario@z.com",
+            celular: "31212217459"
         });
     }
 
